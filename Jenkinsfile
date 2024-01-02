@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean install -Dmaven.repo.local=/opt/jenkins'
+               sh 'mvn clean install -Dmaven.repo.local=/opt/jenkins -e -X'
+
             }
         }
         stage('Test') {

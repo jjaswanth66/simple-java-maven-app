@@ -2,13 +2,13 @@ pipeline {
     agent {
         docker {
             image 'maven:latest'
-            args '-v /opt/jenkins'
+            args '-v /opt/jenkins/simple-java-maven-app'
         }
     }
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean install -Dmaven.repo.local=/opt/jenkins/simple-java-maven-app'
+                sh 'mvn clean install -Dmaven.repo.local=/opt/jenkins'
             }
         }
         stage('Test') {

@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:latest'
-            args '-v /opt/jenkins:/root/.m2'
+            args '-v /opt/jenkins'
         }
     }
     stages {
